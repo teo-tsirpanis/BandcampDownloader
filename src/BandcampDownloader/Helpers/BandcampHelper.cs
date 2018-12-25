@@ -89,15 +89,15 @@ namespace BandcampDownloader {
             return fixedData;
         }
 
-        private static readonly Regex AlbumDataRegex = new Regex("var TralbumData = ({.*});", RegexOptions.Compiled);
+        private static readonly Regex AlbumDataRegex = new Regex("var TralbumData = ({.*?});", RegexOptions.Singleline | RegexOptions.Compiled);
 
         private static String GetAlbumData(String htmlCode) {
             Match regexMatch = AlbumDataRegex.Match(htmlCode);
  
-            if (regexMatch.Success) return regexMatch.Groups[0].Value;
+            if (regexMatch.Success) return regexMatch.Groups[1].Value;
             // Could not find startString
             Exception up = new Exception("Could not find the following string in HTML code: var TralbumData = {");
-            throw up;
+            throw up; // :-)
         }
     }
 }
