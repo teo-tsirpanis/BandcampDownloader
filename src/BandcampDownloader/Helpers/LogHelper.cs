@@ -32,7 +32,7 @@ namespace BandcampDownloader {
                     color = Brushes.Red;
                     break;
                 default:
-                    throw new NotImplementedException();
+                    throw new ArgumentOutOfRangeException(nameof(logType));
             }
 
             return color;

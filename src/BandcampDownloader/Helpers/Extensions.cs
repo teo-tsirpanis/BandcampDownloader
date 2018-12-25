@@ -56,7 +56,7 @@ namespace BandcampDownloader {
                 case LogType.Error:
                     return LogLevel.Error;
                 default:
-                    throw new NotImplementedException();
+                    throw new ArgumentOutOfRangeException(nameof(logType));
             }
         }
     }

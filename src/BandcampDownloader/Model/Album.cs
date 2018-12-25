@@ -7,11 +7,7 @@ namespace BandcampDownloader {
         public String Artist { get; set; }
         public String ArtworkUrl { get; set; }
 
-        public Boolean HasArtwork {
-            get {
-                return ArtworkUrl != null;
-            }
-        }
+        public Boolean HasArtwork => ArtworkUrl != null;
 
         public DateTime ReleaseDate { get; set; }
         public String Title { get; set; }
